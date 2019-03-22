@@ -3,11 +3,14 @@ import UIKit
 
 class Tab2ViewController: UIViewController {
 
-    fileprivate let colorBlack = UIColor.red
-    fileprivate let colorGreen = UIColor.green
+    private let rows = 5
+    private let colorBlack = UIColor.red
+    private let colorGreen = UIColor.green
+
     weak var tabsDelegate: TabsComponentDelegate?
     weak var tabsDataSource: TabsComponentDataSource?
-    fileprivate let tableView = UITableView(frame: .zero, style: .grouped)
+
+    private let tableView = UITableView(frame: .zero, style: .grouped)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,9 +70,13 @@ extension Tab2ViewController: TabsChildComponent {
 
 extension Tab2ViewController: UITableViewDataSource {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return 30
+        return rows
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,16 +84,19 @@ extension Tab2ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
         cell.textLabel?.text = indexPath.row.description
 
-        let percentage = CGFloat(indexPath.row) / CGFloat(30 - 1)
+        let percentage = CGFloat(indexPath.row) / CGFloat(rows - 1)
         cell.backgroundColor = fadeFromColor(colorBlack, toColor:colorGreen, withPercentage:percentage)
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-
         let height = tabsDataSource?.heightForTopComponent() ?? 0
         return height
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
     }
 }
 

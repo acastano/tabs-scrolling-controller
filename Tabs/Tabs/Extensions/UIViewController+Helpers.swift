@@ -5,16 +5,16 @@ extension UIViewController {
 
     func add(_ viewController: UIViewController, to contentView: UIView) {
 
-        viewController.willMove(toParentViewController: self)
+        viewController.willMove(toParent: self)
 
-        addChildViewController(viewController)
+        addChild(viewController)
 
         contentView.addSubview(viewController.view)
 
         viewController.view.frame = contentView.bounds
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
         viewController.view.pinToSuperviewEdges()
-        viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParent: self)
         
         UIView.performWithoutAnimation {
             viewController.view.layoutIfNeeded()
@@ -23,9 +23,9 @@ extension UIViewController {
 
     func remove(_ viewController: UIViewController) {
 
-        viewController.willMove(toParentViewController: nil)
+        viewController.willMove(toParent: nil)
         viewController.view.removeFromSuperview()
-        viewController.removeFromParentViewController()
+        viewController.removeFromParent()
     }
 
     func fadeFromColor(_ fromColor: UIColor, toColor: UIColor, withPercentage: CGFloat) -> UIColor {

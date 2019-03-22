@@ -4,8 +4,8 @@ import Foundation
 protocol TabsChildComponent {
 
     var viewController: UIViewController { get }
-    weak var tabsDelegate: TabsComponentDelegate? { get set }
-    weak var tabsDataSource: TabsComponentDataSource? { get set }
+    var tabsDelegate: TabsComponentDelegate? { get set }
+    var tabsDataSource: TabsComponentDataSource? { get set }
 
     func reset()
 }

@@ -3,9 +3,9 @@ import UIKit
 
 class Tab1ViewController: UIViewController {
 
-    fileprivate let colorGreen = UIColor.red
-    fileprivate let colorBlack = UIColor.green
-    fileprivate let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private let colorGreen = UIColor.red
+    private let colorBlack = UIColor.green
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     weak var tabsDelegate: TabsComponentDelegate?
     weak var tabsDataSource: TabsComponentDataSource?
@@ -101,7 +101,7 @@ extension Tab1ViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 
-        return UIEdgeInsetsMake(0, 0, 0, 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

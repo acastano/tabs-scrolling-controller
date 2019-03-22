@@ -66,7 +66,7 @@ class SelectorViewController: UIViewController {
         bottomBorder2.pinToSuperviewBottom()
     }
 
-    func tab1Tapped() {
+    @objc func tab1Tapped() {
 
         delegate?.tabsSelectorDelegateDidSelect(index: 0)
         bottomBorder1.isHidden = false
@@ -76,7 +76,7 @@ class SelectorViewController: UIViewController {
         buttonTab2.isSelected = false
     }
 
-    func tab2Tapped() {
+    @objc func tab2Tapped() {
 
         delegate?.tabsSelectorDelegateDidSelect(index: 1)
         bottomBorder1.isHidden = true

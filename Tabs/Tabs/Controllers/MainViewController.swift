@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
         button.alignHorizontalCenter(withView: view)
     }
 
-    func tabsTapped() {
+    @objc func tabsTapped() {
 
         let topViewController = TopViewController()
         let selectorViewController = SelectorViewController()

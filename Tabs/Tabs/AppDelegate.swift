@@ -5,7 +5,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let mainViewController = MainViewController()
 
@@ -27,10 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.tintColor = .white
         navigationBar.shadowImage = UIImage()
         navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.white,
-            NSFontAttributeName: UIFont.systemFont(ofSize: 15)
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)
         ]
     }
-
 }
 

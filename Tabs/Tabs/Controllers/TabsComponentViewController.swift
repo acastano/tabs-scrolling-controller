@@ -2,19 +2,19 @@ import UIKit
 
 class TabsComponentViewController: UIViewController {
 
-    fileprivate let navBarHeight: CGFloat = 64.0
+    private let navBarHeight: CGFloat = 64.0
 
-    fileprivate let topContainerView = UIView()
-    fileprivate let tabContainerView = UIView()
-    fileprivate let contentContainerView = UIView()
+    private let topContainerView = UIView()
+    private let tabContainerView = UIView()
+    private let contentContainerView = UIView()
 
-    fileprivate let topComponent: TabsTopComponent
-    fileprivate let tabsComponents: [TabsChildComponent]
-    fileprivate var selectorComponent: TabsSelectorComponent
-    fileprivate var selectedTabComponent: TabsChildComponent!
+    private let topComponent: TabsTopComponent
+    private let tabsComponents: [TabsChildComponent]
+    private var selectorComponent: TabsSelectorComponent
+    private var selectedTabComponent: TabsChildComponent!
 
-    fileprivate var topTopContainerViewConstraint: NSLayoutConstraint!
-    fileprivate var heightTopContainerViewConstraint: NSLayoutConstraint!
+    private var topTopContainerViewConstraint: NSLayoutConstraint!
+    private var heightTopContainerViewConstraint: NSLayoutConstraint!
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
